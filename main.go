@@ -2,6 +2,7 @@ package knowledge_repository
 
 import (
 	"github.com/beijJxy/knowledge_repository/global"
+	"github.com/beijJxy/knowledge_repository/initialize"
 	"github.com/beijJxy/knowledge_repository/router"
 	"github.com/gin-gonic/gin"
 )
@@ -10,8 +11,10 @@ type Knowledge_repositoryPlugin struct {
 }
 
 func CreateKnowledge_repositoryPlug(Type string) *Knowledge_repositoryPlugin {
+	// 初始化
 	global.GlobalConfig.Type = Type
-
+	initialize.Viper()
+	initialize.Gorm()
 	return &Knowledge_repositoryPlugin{}
 }
 
