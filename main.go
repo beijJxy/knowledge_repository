@@ -14,7 +14,7 @@ func CreateKnowledge_repositoryPlug(Type string) *Knowledge_repositoryPlugin {
 	// 初始化
 	global.GlobalConfig.Type = Type
 	initialize.Viper()
-	initialize.Gorm()
+	global.VULN_DB = initialize.Gorm()
 	return &Knowledge_repositoryPlugin{}
 }
 

@@ -12,9 +12,9 @@ import (
 
 // Viper 初始化Viper
 func Viper() {
-	viper.SetConfigFile("config.yaml") // 指定配置文件路径
-	err := viper.ReadInConfig()        // 读取配置信息
-	if err != nil {                    // 读取配置信息失败
+	viper.SetConfigFile("knowledgeconfig.yaml") // 指定配置文件路径
+	err := viper.ReadInConfig()                 // 读取配置信息
+	if err != nil {                             // 读取配置信息失败
 		panic(fmt.Errorf("Fatal error config file: %s \n", err))
 	}
 	// 将读取的配置信息保存至全局变量Conf
