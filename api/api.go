@@ -1,12 +1,12 @@
 package api
 
 import (
+	"github.com/beijJxy/knowledge_repository/model"
+	"github.com/beijJxy/knowledge_repository/service"
 	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
-	"knowledge_repository/model"
-	"knowledge_repository/service"
 )
 
 type KnowledgeRepositoryApi struct{}

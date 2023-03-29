@@ -1,4 +1,4 @@
-module knowledge_repository
+module github.com/beijJxy/knowledge_repository
 
 go 1.19
 

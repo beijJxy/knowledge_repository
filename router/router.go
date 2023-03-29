@@ -1,8 +1,8 @@
 package router
 
 import (
+	"github.com/beijJxy/knowledge_repository/api"
 	"github.com/gin-gonic/gin"
-	"knowledge_repository/api"
 )
 
 type Knowledge_repositoryRouter struct {
@@ -12,6 +12,7 @@ func (s *Knowledge_repositoryRouter) InitKnowledge_repositoryRouter(Router *gin.
 	plugRouter := Router
 	plugApi := api.ApiGroupApp.KnowledgeRepositoryApi
 	{
-		plugRouter.POST("routerName", plugApi.ApiName)
+		plugRouter.GET("routerName", plugApi.ApiName)
+		plugRouter.GET("vuln/list", plugApi.GetAllVulnRepoApis)
 	}
 }

@@ -1,8 +1,8 @@
 package service
 
 import (
-	"knowledge_repository/global"
-	"knowledge_repository/model"
+	"github.com/beijJxy/knowledge_repository/global"
+	"github.com/beijJxy/knowledge_repository/model"
 )
 
 type Knowledge_repositoryService struct{}

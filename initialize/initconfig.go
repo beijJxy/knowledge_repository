@@ -3,11 +3,11 @@ package initialize
 // 初始化相关操作
 import (
 	"fmt"
+	"github.com/beijJxy/knowledge_repository/global"
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"knowledge_repository/global"
 )
 
 // Viper 初始化Viper

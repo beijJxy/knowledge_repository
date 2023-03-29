@@ -1,9 +1,9 @@
 package global
 
 import (
+	"github.com/beijJxy/knowledge_repository/config"
 	"github.com/spf13/viper"
 	"gorm.io/gorm"
-	"knowledge_repository/config"
 )
 
 var (
