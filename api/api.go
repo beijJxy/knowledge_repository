@@ -28,7 +28,7 @@ func (p *KnowledgeRepositoryApi) ApiName(c *gin.Context) {
 }
 
 // GetAllVulnRepoApis 获取所有漏洞信息
-func (s *KnowledgeRepositoryApi) GetAllVulnRepoApis(c *gin.Context) {
+func (k *KnowledgeRepositoryApi) GetAllVulnRepoApis(c *gin.Context) {
 	var plug model.Request
 	_ = c.ShouldBindJSON(&plug)
 	if res, err := service.ServiceGroupApp.GetAllVulnRepoService(); err != nil {
@@ -37,4 +37,55 @@ func (s *KnowledgeRepositoryApi) GetAllVulnRepoApis(c *gin.Context) {
 	} else {
 		response.OkWithDetailed(res, "成功", c)
 	}
+}
+
+func (k *KnowledgeRepositoryApi) CreateVulnRepo(c *gin.Context) {
+	var vuln model.VulnRepo
+	err := c.ShouldBind(&vuln)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+	}
+	// 省略校验
+	err = service.ServiceGroupApp.CreateVulnRepo(vuln)
+	if err != nil {
+		global.GVA_LOG.Error("创建失败!", zap.Error(err))
+		response.FailWithMessage("创建失败", c)
+		return
+	}
+	response.OkWithMessage("漏洞库数据创建成功", c)
+}
+
+func (k *KnowledgeRepositoryApi) UpdateVulnRepo(c *gin.Context) {
+	var vuln model.VulnRepo
+	err := c.ShouldBindJSON(&vuln)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	// 省略校验
+	err = service.ServiceGroupApp.UpdateVuln(vuln)
+	if err != nil {
+		global.GVA_LOG.Error("修改失败!", zap.Error(err))
+		response.FailWithMessage("修改失败", c)
+		return
+	}
+	response.OkWithMessage("修改成功", c)
+}
+
+func (k *KnowledgeRepositoryApi) DeleteVulnRepo(c *gin.Context) {
+	var entity model.VulnRepo
+	err := c.ShouldBindJSON(&entity)
+	if err != nil {
+		response.FailWithMessage(err.Error(), c)
+		return
+	}
+	// 省略校验
+	err = service.ServiceGroupApp.DeleteVulnRepo(entity)
+	if err != nil {
+		global.GVA_LOG.Error("删除失败!", zap.Error(err))
+		response.FailWithMessage("删除失败", c)
+		return
+	}
+	response.OkWithMessage("删除成功", c)
+
 }

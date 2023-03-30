@@ -8,8 +8,8 @@ import (
 
 var (
 	GVA_VP     *viper.Viper
-	GVA_CONFIG config.Knowledge_repository
+	GVA_CONFIG config.KnowledgeRepository
 	VULN_DB    *gorm.DB
 )
 
-var GlobalConfig = new(config.Knowledge_repository)
+var GlobalConfig = new(config.KnowledgeRepository)

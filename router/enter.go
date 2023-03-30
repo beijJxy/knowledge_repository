@@ -1,7 +1,7 @@
 package router
 
 type RouterGroup struct {
-	Knowledge_repositoryRouter
+	KnowledgeRepositoryRouter
 }
 
 var RouterGroupApp = new(RouterGroup)

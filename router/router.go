@@ -5,14 +5,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Knowledge_repositoryRouter struct {
+type KnowledgeRepositoryRouter struct {
 }
 
-func (s *Knowledge_repositoryRouter) InitKnowledge_repositoryRouter(Router *gin.RouterGroup) {
+func (s *KnowledgeRepositoryRouter) InitKnowledgeRepositoryRouter(Router *gin.RouterGroup) {
 	plugRouter := Router
 	plugApi := api.ApiGroupApp.KnowledgeRepositoryApi
 	{
 		plugRouter.GET("routerName", plugApi.ApiName)
 		plugRouter.GET("vuln/list", plugApi.GetAllVulnRepoApis)
+		plugRouter.POST("vuln/create", plugApi.CreateVulnRepo)
+		plugRouter.POST("vuln/update", plugApi.UpdateVulnRepo)
+		plugRouter.POST("vuln/delete", plugApi.DeleteVulnRepo)
 	}
 }

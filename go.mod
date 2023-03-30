@@ -35,6 +35,7 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pelletier/go-toml v1.6.0 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
+	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/smartystreets/assertions v1.2.0 // indirect
 	github.com/songzhibin97/gkit v1.2.7 // indirect
 	github.com/spf13/afero v1.2.2 // indirect
